@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Banner from "../components/Banner";
 import Card from "../components/Card";
 import "../styles/Home.scss";
@@ -18,7 +18,7 @@ function Home() {
   }, []);
 
   return (
-    <div className="container">
+    <>
       <Banner
         image="/assets/banner.jpg"
         text="Chez vous, partout et ailleurs"
@@ -33,7 +33,7 @@ function Home() {
           />
         ))}
       </div>
-    </div>
+    </>
   );
 }
 

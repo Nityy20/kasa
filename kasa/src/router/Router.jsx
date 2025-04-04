@@ -1,22 +1,21 @@
 import React from "react";
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-} from "react-router-dom";
-import MainLayout from "../layouts/MainLayout";
+import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home";
 import About from "../pages/About";
+import Logement from "../pages/Logement";
 import Error404 from "../pages/Error404";
+import MainLayout from "../layouts/MainLayout";
 
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path="/" element={<MainLayout />}>
-      <Route index element={<Home />} />
-      <Route path="about" element={<About />} />
-      <Route path="*" element={<Error404 />} />
-    </Route>
-  )
-);
+const router = createBrowserRouter([
+  {
+    element: <MainLayout />,
+    children: [
+      { path: "/", element: <Home /> },
+      { path: "/about", element: <About /> },
+      { path: "/logement/:id", element: <Logement /> },
+      { path: "*", element: <Error404 /> },
+    ],
+  },
+]);
 
 export default router;

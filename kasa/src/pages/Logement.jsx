@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Navigate } from "react-router-dom";
+
 import Slideshow from "../components/Slideshow";
 import Tag from "../components/Tag";
 import Collapse from "../components/Collapse";
@@ -32,7 +34,8 @@ function Logement() {
       .catch((err) => console.error("Erreur chargement logement :", err));
   }, [id]);
 
-  if (!logement) return <p>Logement non trouvé</p>;
+  if (logement === undefined) return <Navigate to="/error" />;
+  if (!logement) return null;
 
   return (
     <div className="logement">
@@ -51,12 +54,12 @@ function Logement() {
 
         <div className="logement__right">
           <div className="logement__host">
-            <p className="logement__host-name">{logement.host.name}</p>
             <img
               className="logement__host-picture"
               src={logement.host.picture}
               alt={`Photo de ${logement.host.name}`}
             />
+            <p className="logement__host-name">{logement.host.name}</p>
           </div>
 
           <div className="logement__rating">

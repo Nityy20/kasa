@@ -1,0 +1,8 @@
+.home__gallery {
+  background-color: #f6f6f6;
+  padding: 50px;
+  border-radius: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 60px;
+}

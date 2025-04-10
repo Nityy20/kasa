@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Banner from "../components/Banner";
 import Card from "../components/Card";
-import "../styles/Home.scss";
+
 
 function Home() {
   const [logements, setLogements] = useState(

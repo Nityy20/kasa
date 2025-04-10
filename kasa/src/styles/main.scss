@@ -1,12 +1,25 @@
-@import "./Home.scss";
+// UTILS
+@use "utils/variables";
+@use "utils/mixins";
 
-body {
-  margin: 0;
-  font-family: sans-serif;
-}
+// BASE
+@use "base/reset";
+@use "base/typography";
 
-.container {
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
+// LAYOUT
+@use "layout/container";
+
+// COMPONENTS
+@use "components/banner";
+@use "components/card";
+@use "components/collapse";
+@use "components/footer";
+@use "components/header";
+@use "components/slideshow";
+@use "components/tag";
+
+// PAGES
+@use "pages/home";
+@use "pages/about";
+@use "pages/error404";
+@use "pages/logement";

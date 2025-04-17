@@ -1,8 +1,15 @@
 import React from "react";
 
-function Banner({ image, text = "" }) {
+/**
+ * @param {{
+ *  image: string,
+ *  text?: string | React.ReactNode,
+ *  className?: string
+ * }} props
+ */
+function Banner({ image, text = "", className = "" }) {
   return (
-    <div className="banner">
+    <div className={`banner ${className}`}>
       <img src={image} alt="bannière" className="banner__image" />
       {text && <div className="banner__text">{text}</div>}
     </div>

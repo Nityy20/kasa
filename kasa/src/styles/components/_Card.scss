@@ -1,8 +1,11 @@
+@use "../utils/mixins" as *;
+
 .card {
   position: relative;
   display: block;
   border-radius: 10px;
   overflow: hidden;
+  width: 340px;
   height: 340px;
 
   &__image {
@@ -32,5 +35,15 @@
     font-size: 18px;
     font-weight: bold;
     z-index: 2;
+  }
+
+  @include mobile {
+    width: 335px;
+    height: 255px;
+    margin: 0 auto;
+
+    &__image {
+      height: 100%;
+    }
   }
 }

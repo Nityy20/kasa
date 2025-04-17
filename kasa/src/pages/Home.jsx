@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Banner from "../components/Banner";
 import Card from "../components/Card";
 
-
 function Home() {
   const [logements, setLogements] = useState(
     /** @type {Array<{ id: string, title: string, cover: string }>} */ ([])
@@ -21,7 +20,12 @@ function Home() {
     <>
       <Banner
         image="/assets/banner.jpg"
-        text="Chez vous, partout et ailleurs"
+        text={
+          <>
+            Chez vous, <br className="line-break" />
+            partout et ailleurs
+          </>
+        }
       />
 
       <div className="home__gallery">

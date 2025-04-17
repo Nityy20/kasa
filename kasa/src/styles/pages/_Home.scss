@@ -1,8 +1,21 @@
+@use "../utils/mixins" as *;
+
 .home__gallery {
-  background-color: #f6f6f6;
-  padding: 50px;
-  border-radius: 25px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 60px;
+  background-color: #f6f6f6;
+  padding: 50px;
+  border-radius: 25px;
+  margin-bottom: 50px;
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    gap: 20px;
+    background-color: transparent;
+    margin-bottom: 27px;
+  }
 }

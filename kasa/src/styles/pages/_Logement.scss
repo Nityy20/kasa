@@ -1,3 +1,5 @@
+@use "../utils/mixins" as *;
+
 .logement {
   &__header {
     display: flex;
@@ -48,12 +50,14 @@
   }
 
   &__host-name {
-    font-size: 18px;
+    font-size: 12px;
     font-weight: 500;
-    line-height: 143%;
     color: #ff6060;
-    max-width: 100px;
-    word-break: break-word;
+    text-align: right;
+    max-width: 80px;
+    line-height: 100%;
+    margin: 0;
+    padding: 0;
   }
 
   &__host-picture {
@@ -82,5 +86,90 @@
     display: flex;
     gap: 76px;
     margin-top: 30px;
+  }
+
+  .logement {
+    @include mobile {
+      &__header {
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        margin-top: 15px;
+      }
+
+      &__left {
+        width: 100%;
+      }
+
+      &__title {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 143%;
+        margin: 0 0 5px;
+      }
+
+      &__location {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 143%;
+        margin-bottom: 10px;
+      }
+
+      &__tags {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 2px;
+        margin-bottom: 0px;
+      }
+
+      &__right {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row-reverse;
+        margin-top: 0px;
+        width: 100%;
+        padding-right: 20px;
+      }
+
+      &__host {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &-name {
+          font-size: 12px;
+          font-weight: 500;
+          color: #ff6060;
+          text-align: right;
+          max-width: 80px;
+          line-height: 143%;
+        }
+
+        &-picture {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          background-color: #c4c4c4;
+          object-fit: cover;
+        }
+      }
+
+      &__rating {
+        display: flex;
+        gap: 5px;
+
+        .logement__star {
+          font-size: 18px;
+        }
+      }
+
+      &__collapses {
+        margin-top: 0px;
+        flex-direction: column;
+        gap: 0px;
+      }
+    }
   }
 }

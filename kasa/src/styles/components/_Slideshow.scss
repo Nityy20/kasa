@@ -1,3 +1,5 @@
+@use "../utils/mixins" as *;
+
 .slideshow {
   position: relative;
   width: 100%;
@@ -17,10 +19,15 @@
     transform: translateY(-50%);
     background: none;
     border: none;
-    font-size: 10rem;
     color: white;
     cursor: pointer;
     z-index: 2;
+
+    // icônes SVG
+    svg {
+      width: 64px;
+      height: 64px;
+    }
 
     &--left {
       left: 20px;
@@ -40,5 +47,35 @@
     font-size: 1rem;
     padding: 4px 10px;
     border-radius: 10px;
+  }
+
+  @include mobile {
+    width: 335px;
+    height: 255px;
+    margin: 0 auto;
+    border-radius: 10px;
+
+    &__image {
+      border-radius: 10px;
+    }
+
+    &__arrow {
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      &--left {
+        left: 8px;
+      }
+
+      &--right {
+        right: 8px;
+      }
+    }
+
+    &__counter {
+      display: none;
+    }
   }
 }

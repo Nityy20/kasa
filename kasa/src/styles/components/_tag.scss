@@ -1,3 +1,5 @@
+@use "../utils/mixins" as *;
+
 .tag {
   background-color: #ff6060;
   color: white;
@@ -6,6 +8,13 @@
   font-size: 14px;
   font-weight: 500;
   display: inline-block;
+  width: auto;
   margin-right: 10px;
   margin-bottom: 10px;
+
+  @include mobile {
+    font-size: 10px;
+    padding: 3px 10px;
+    border-radius: 5px;
+  }
 }
